@@ -1,0 +1,3 @@
+Traces Read: 2519
+Games used: 1909(Draws not used: 610)
+Samples extracted: 5727
