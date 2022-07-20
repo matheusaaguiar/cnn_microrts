@@ -88,8 +88,8 @@ def readFPSfromFile(f):
 
 
 log = ''
-samples_dir_list = ['/home/matheus/doutorado/pytorch/data/samples/tournament-200ms/',
-               '/home/matheus/doutorado/pytorch/data/samples/tournament-100ms/'
+samples_dir_list = ['../data/samples/tournament-200ms/',
+               '../samples/tournament-100ms/'
                ]
 samples_files = []
 for samples_dir in samples_dir_list:
@@ -99,10 +99,6 @@ for samples_dir in samples_dir_list:
     for f in os.listdir(samples_dir):
         if f != 'statistics.txt':
             samples_files.append(f)
-
-    #if('statistics.txt' in samples_files):
-     #   samples_files.remove('statistics.txt')
-
 
 import random
 random.shuffle(samples_files)  #shuffle file names to randomize data sequence
@@ -177,7 +173,7 @@ print('\tLabels : ' + str( len(y) ) )
 
 print("Writting to HDF5 File")
 
-dirname = os.path.abspath('/home/matheus/doutorado/pytorch/data/')
+dirname = os.path.abspath('../data/')
 if not os.path.exists(dirname):
     os.makedirs(dirname)
 
@@ -200,7 +196,7 @@ with open(os.path.join(dirname, 'test.txt'), 'w') as f:
     f.write(test_filename + '\n')
     
 
-dirname = os.path.abspath('/home/matheus/doutorado/pytorch/data/test/combined')
+dirname = os.path.abspath('../data/test/combined')
 
 log = log + 'Test data sorted by game time percentage:' + '\n'
 print('Test data sorted by game time percentage:')
